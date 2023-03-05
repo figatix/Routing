@@ -25,6 +25,7 @@ export const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:productId" element={<ProductDetails />} />
+
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </Container>
