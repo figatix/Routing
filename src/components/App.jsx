@@ -4,30 +4,33 @@ import { About } from '../pages/About';
 import { Products } from '../pages/Products';
 import { ProductDetails } from '../pages/ProductDetails';
 import { Container, Header, Logo, StyledNavLink } from './App.styled';
+import { Mission } from './Mission';
+import { Team } from './Team';
+import { Reviews } from './Reviews';
+import { SharedLayout } from './SharedLayout';
 // import { NotFound } from '../pages/NotFound';
 
 
 
 export const App = () => {
   return (
-    <Container>
-      <Header>
-        <Logo> figatix </Logo>
-        <nav>
-          <StyledNavLink to='/' end>Home</StyledNavLink>
-          <StyledNavLink to="/about">About</StyledNavLink>
-          <StyledNavLink to="/products">Products</StyledNavLink>
-        </nav>
-      </Header>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:productId" element={<ProductDetails />} />
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />}>
+          <Route path="mission" element={<Mission />} />
+          <Route path="team" element={<Team />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+
+
+        <Route path="products" element={<Products />} />
+        <Route path="products/:productId" element={<ProductDetails />} />
 
         {/* <Route path="*" element={<NotFound />} /> */}
-      </Routes>
-    </Container>
+      </Route>
+    </Routes>
+
   );
 };
