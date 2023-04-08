@@ -1,7 +1,6 @@
 import { ProductList } from "../components/ProductList";
 import { getProducts } from '../fakeApi';
 import { useSearchParams } from "react-router-dom";
-import { useMemo } from "react";
 
 import { SearchBox } from "../components/SearchBox";
 
